@@ -1,0 +1,325 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background: rgba(30,30,60,0.95);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+header nav ul li a {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+  color: #a777e3;
+  outline: none;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a:focus::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Main Content */
+main {
+  flex: 1 0 auto;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Home Section */
+#home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  animation: fadeInDown 1s ease forwards;
+}
+
+.card-display {
+  min-height: 200px;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  font-size: 1.2rem;
+  user-select: none;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.controls button {
+  background: #a777e3;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  margin: 0 15px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(167,119,227,0.6);
+  transition: background 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.controls button:hover,
+.controls button:focus {
+  background: #6e8efb;
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Services Section */
+#services {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 60px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4a3a80;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.service {
+  background: #6e8efb;
+  color: #fff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(110,142,251,0.5);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  transition: background 0.4s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.service:hover {
+  background: #a777e3;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(167,119,227,0.7);
+}
+
+/* About Section */
+#about {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeInUp 1.8s ease forwards;
+  margin-bottom: 80px;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a3a80;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+}
+
+#about p {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b4b6b;
+  text-align: center;
+  user-select: none;
+}
+
+/* Team */
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.member {
+  background: #6e8efb;
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 200px;
+  box-shadow: 0 10px 30px rgba(110,142,251,0.5);
+  text-align: center;
+  color: white;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.member:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(167,119,227,0.7);
+}
+
+.member img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #a777e3;
+  object-fit: cover;
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
+}
+
+.member h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.member p {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Footer */
+footer {
+  background: rgba(30, 30, 60, 0.95);
+  color: #ddd;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+}
+
+footer p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  user-select: none;
+}
+
+footer .social-media a {
+  color: #a777e3;
+  margin: 0 18px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-media a:hover,
+footer .social-media a:focus {
+  color: #fff;
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+    gap: 20px;
+  }
+
+  #home h1 {
+    font-size: 2.2rem;
+  }
+
+  #services, #about {
+    padding: 30px 15px;
+  }
+
+  .service {
+    font-size: 1rem;
+  }
+
+  .team {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .member {
+    width: 90%;
+  }
+}
