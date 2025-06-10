@@ -1,1 +1,1 @@
-# Genz_CC
+# GenzCC
